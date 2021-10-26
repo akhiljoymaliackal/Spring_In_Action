@@ -5,12 +5,14 @@ import java.util.Arrays;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
 import lombok.extern.slf4j.Slf4j;
 import tacos.domain.Ingredient;
 import tacos.domain.Ingredient.Type;
+import tacos.domain.Taco;
 
 @Slf4j
 @Controller
@@ -38,9 +40,15 @@ public class DesignTacoController {
 			model.addAttribute(type.toString(),Ingredient.filterByType(type, ingredients));
 		}
 		 
-		model.addAttribute("design", new Ingredient(null, null, null));
+		model.addAttribute("design", new Taco());
+		
 		return "design";
 		}
 	
+	@PostMapping
+	public String processDesign(Taco taco) {
+		log.info("Taco Design: "+taco.toString());
+		return "redirect:/orders/current";
+	}
 
 }
