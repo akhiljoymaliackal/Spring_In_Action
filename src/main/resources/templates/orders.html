@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns=="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Orders</title>
+	</head>
+	<body>
+		<h3>Confirm Your Order</h3>
+		<form method="POST" th:action="@{/orders}" th:object="${orders}">
+		<label for="name">Name:</label>
+		<input type="text" th:field="*{name}">
+		</form>
+	</body>
+
+</html>
