@@ -5,10 +5,36 @@ xmlns:th="http://www.thymeleaf.org">
 		<title>Orders</title>
 	</head>
 	<body>
+		<a th:href="@{/design}">Click here to cancel the order</a><br/>
 		<h3>Confirm Your Order</h3>
 		<form method="POST" th:action="@{/orders}" th:object="${orders}">
-		<label for="name">Name:</label>
-		<input type="text" th:field="*{name}">
+			<label for="name">Name:</label>
+			<input type="text" th:field="*{name}"/>
+			<br>
+			<label for="street">Street:</label>
+			<input type="text" th:field="*{street}"/><br>
+			
+			<label for="city">City</label>
+			<input type="text" th:field="*{city}"/><br>
+			
+			<label for="state">State:</label>
+			<input type="text" th:field="*{state}"/><br>
+			
+			<label for="zip">Zip:</label>
+			<input type="text" th:field="*{zip}"/><br>
+			
+			<h3>Enter the Payment Details</h3><br/>
+			
+			<label for="ccNumber">Card Number:</label>
+			<input type="text" th:field="*{ccNumber}"/><br>
+			
+			<label for="ccExpiry">Card Expiration Date:</label>
+			<input type="text" th:field="*{ccExpiry}"/><br>
+			
+			<label for="ccCVV">CVV Number:</label>
+			<input type="text" th:field="*{ccCVV}"/><br>
+		
+		<input type="submit" value="Submit Order"/>
 		</form>
 	</body>
 

@@ -10,6 +10,6 @@ public class Orders {
 	private String state;
 	private String zip;
 	private String ccNumber;
-	private String ccException;
+	private String ccExpiry;
 	private String ccCVV;
 }
